@@ -23,9 +23,11 @@ import {
 import { Store } from '../utils/store';
 import dynamic from 'next/dynamic';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 function CartScreen() {
   const { state, dispatch } = useContext(Store);
+  const router = useRouter();
   const {
     cart: { cartItems },
   } = state;
@@ -39,6 +41,9 @@ function CartScreen() {
   };
   const removeItemHandler = (item) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
+  };
+  const checkoutHandler = () => {
+    router.push('/shipping');
   };
   return (
     <Layout title="Shopping Cart">
@@ -130,7 +135,12 @@ function CartScreen() {
                   </Typography>
                 </ListItem>
                 <ListItem>
-                  <Button variant="contained" color="primary" fullWidth>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={checkoutHandler}
+                    fullWidth
+                  >
                     Check Out
                   </Button>
                 </ListItem>
