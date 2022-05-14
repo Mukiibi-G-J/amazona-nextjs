@@ -40,6 +40,8 @@ const useStyles = makeStyles({
   },
   progresbar: {
     paddingTop: '100px',
+
+    backgroundColor: 'transparent',
   },
 });
 
