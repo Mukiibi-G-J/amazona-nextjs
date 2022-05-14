@@ -4,6 +4,7 @@ const useStyles = makeStyles({
   navbar: {
     backgroundColor: '#203040',
     //! changing color of children
+    // marginBottom: '120px',
     '& a': {
       color: '#ffff',
       marginLeft: 10,
@@ -36,6 +37,9 @@ const useStyles = makeStyles({
   navbarButton: {
     color: '#ffffff',
     textTransform: 'initial',
+  },
+  progresbar: {
+    paddingTop: '100px',
   },
 });
 
